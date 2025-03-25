@@ -5,13 +5,16 @@
 <html>
 <head>
     <title>Reset Mật Khẩu</title>
-</head>
 <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
 <body>
-    <h1>Reset Mật Khẩu</h1>
+<div class="container">
+    <h1>Đặt lại mật khẩu</h1>
     <form action="reset_process.php" method="post">
-        <label>Email:</label>
-        <input type="email" name="email" required><br>
+    <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Nhập email" required>
+            </div>
         <button type="submit">Gửi Yêu Cầu</button>
     </form>
 </body>

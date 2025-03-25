@@ -1,36 +1,52 @@
-<?php
-
-session_start();
-if (!isset($_SESSION['user'])) {
-    header("Location: ../login.php");
-    exit();
-}
+<?php 
+$products = [
+    ['id' => 1, 'name' => 'Áo Thun Đen', 'price' => '40.000 VND'],
+    ['id' => 2, 'name' => 'Quần Jeans Xanh', 'price' => '50.000 VND'],
+    ['id' => 3, 'name' => 'Giày Thể Thao', 'price' => '200.000 VND'],
+    ['id' => 4, 'name' => 'Váy Caro', 'price' => '30.000 VND']
+];
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Danh Sách Sản Phẩm</title>
+    <link rel="stylesheet" type="text/css" href="styleee.css">
 </head>
-<link rel="stylesheet" type="text/css" href="styles.css">
 <body>
-    <h1>Danh Sách Sản Phẩm</h1>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Tên</th>
-            <th>Giá</th>
-            <th>Hành Động</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Sản phẩm A</td>
-            <td>100,000 VND</td>
-            <td>
-                <a href="update.php?id=1">Sửa</a>
-                <a href="delete.php?id=1">Xóa</a>
-            </td>
-        </tr>
-    </table>
-    <a href="create.php">Thêm Sản Phẩm</a>
+    <header>
+        <img src="aa.png" alt="Logo" style="width:75px; height:62px;">
+        <nav>
+            <a href="index.php">Trang Chủ</a>
+            <a href="products index.php">Sản phẩm</a>
+            <a href="contact.php">Liên Hệ</a>
+            <a href="login.php">Đăng Xuất</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Danh Sách Sản Phẩm</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Tên Sản Phẩm</th>
+                <th>Giá</th>
+                <th>Hành Động</th>
+            </tr>
+            <?php foreach ($products as $product): ?>
+            <tr>
+                <td><?php echo $product['id']; ?></td>
+                <td><?php echo $product['name']; ?></td>
+                <td><?php echo $product['price']; ?></td>
+                <td>
+                    <a href="update.php?id=<?php echo $product['id']; ?>" class="edit">Sửa</a>
+                    <a href="delete.php?id=<?php echo $product['id']; ?>" class="delete">Xóa</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <a href="products create.php" class="add-btn">Thêm Sản Phẩm</a>
+    </div>
+    <footer>
+        <p>© 2025 - Bản quyền thuộc về Lotus</p>
+    </footer>
 </body>
 </html>

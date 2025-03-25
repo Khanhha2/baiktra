@@ -1,34 +1,37 @@
 <?php
-
 session_start();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Chủ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" type="text/css" href="styles.css">
 <body>
     <header>
-        <img src="logo.png" alt="Logo" style="float:left;">
+        <img src="aa.png" alt="Logo" style="width:85px; height:80px;">
         <nav>
             <ul>
-                <li><a href="index.php">Trang Chủ</a></li>
-                <li><a href="about.php">Giới Thiệu</a></li>
-                <li><a href="contact.php">Liên Hệ</a></li>
-                <li><a href="<?php echo isset($_SESSION['user']) ? 'logout.php' : 'login.php'; ?>">
-                    <?php echo isset($_SESSION['user']) ? 'Đăng Xuất' : 'Đăng Nhập'; ?>
-                </a></li>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="products update.php">Sản phẩm</a></li>
+                <li><a href="contact.php">Liên hệ</a></li>
             </ul>
         </nav>
     </header>
-    <h1 class="center">Chào mừng đến với trang quản lý sản phẩm</h1>
-    <div class="center">
-    <a href="register.php">Đăng Ký</a>
-    <a href="login.php">Đăng Nhập</a>
+
+    <div class="container">
+        <h1>Chào Mừng Đến Với LOTUS</h1>
+        <p>Đây là nơi bạn có thể khám phá các dịch vụ tuyệt vời của chúng tôi. Hãy đăng ký hoặc đăng nhập để trải nghiệm ngay hôm nay!</p>
+        <div class="buttons">
+            <a href="register.php" class="btn-primary">Đăng Ký</a>
+            <a href="login.php" class="btn-secondary">Đăng Nhập</a>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2025 Quản lý sản phẩm</p>
+        <p>&copy; 2025 - Bản quyền thuộc về Lotus</p>
     </footer>
-       </div>
 </body>
 </html>

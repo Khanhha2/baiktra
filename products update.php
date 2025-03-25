@@ -1,37 +1,78 @@
-<?php
-
-session_start();
-if (!isset($_SESSION['user'])) {
-    header("Location: ../login.php");
-    exit();
-}
-
-
-$product = [
-    'id' => 1,
-    'name' => 'Sản phẩm A',
-    'price' => 100000,
-    'description' => 'Mô tả sản phẩm A'
-];
-?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cập Nhật Sản Phẩm</title>
+    <title>Danh Sách Sản Phẩm</title>
+    <link rel="stylesheet" type="text/css" href="styleee.css">
 </head>
-<link rel="stylesheet" type="text/css" href="styles.css">
 <body>
-    <h1>Cập Nhật Sản Phẩm</h1>
-    <form action="update_process.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
-        <label>Tên sản phẩm:</label>
-        <input type="text" name="name" value="<?php echo $product['name']; ?>" required><br>
-        <label>Giá:</label>
-        <input type="number" name="price" value="<?php echo $product['price']; ?>" required><br>
-        <label>Mô tả:</label>
-        <textarea name="description" required><?php echo $product['description']; ?></textarea><br>
-        <button type="submit">Cập Nhật</button>
-    </form>
-    <a href="index.php">Quay lại</a>
+    <header>
+    <img src="aa.png" alt="Logo" style="width:75px; height:62px;">
+        <nav>
+            <a href="index.php">Trang Chủ</a>
+            <a href="products index.php">Sản phẩm</a>
+            <a href="contact.php">Liên Hệ</a>
+            <a href="login.php">Đăng Xuất</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1> Sản Phẩm</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Tên Sản Phẩm</th>
+                <th>Giá</th>
+               
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Áo Thun Đen</td>
+                <td>40.000 VND</td>
+                <td>
+                    <a href="update.php?id=1" class="edit">Mua Ngay</a>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Quần Jeans Xanh</td>
+                <td>50.000 VND</td>
+                <td>
+                    <a href="update.php?id=2" class="edit">Mua Ngay</a>
+                   
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Giày Thể Thao</td>
+                <td>200.000 VND</td>
+                <td>
+                    <a href="update.php?id=3" class="edit">Mua Ngay</a>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Váy Caro</td>
+                <td>30.000 VND</td>
+                <td>
+                    <a href="update.php?id=3" class="edit">Mua Ngay</a>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Áo Tay Dài </td>
+                <td>35.000 VND</td>
+                <td>
+                    <a href="update.php?id=3" class="edit">Mua Ngay</a>
+                    
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+    <footer>
+        <p>&copy; 2025 - Bản quyền thuộc về Lotus</p>
+    </footer>
 </body>
 </html>
